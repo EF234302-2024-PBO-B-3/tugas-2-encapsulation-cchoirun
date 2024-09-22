@@ -3,6 +3,7 @@ using Encapsulation.Employment;
 using System;
 using Encapsulation.Calendar;
 using Encapsulation.Banking;
+using Encapsulation.Extras;
 
 namespace Encapsulation;
 
@@ -53,6 +54,19 @@ public class Program
         Console.WriteLine($"Balance after withdrawal: {account.GetBalance()}");
 
         // Extra
+        Extra myCar = new Extra("Toyota", "Corolla", 50);
+        myCar.DisplayStatus();
 
+        Console.WriteLine("\nRefueling 20 liters...");
+        myCar.Refuel(20);
+        myCar.DisplayStatus();
+
+        Console.WriteLine("\nAttempting to drive 400 km...");
+        if (myCar.Drive(400))
+            Console.WriteLine("Drive successful!");
+        else
+            Console.WriteLine("Not enough fuel!");
+
+        myCar.DisplayStatus();
     }
 }
